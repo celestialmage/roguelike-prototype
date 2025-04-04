@@ -1,0 +1,11 @@
+# old implementation folder
+scraps/
+
+# virtual environment folder
+venv/
+
+# tests folder
+tests/
+
+# pycache folder
+__pycache__/
