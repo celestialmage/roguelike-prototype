@@ -1,4 +1,4 @@
-from .constants import SKILL_CHART
+from ..constants.constants import SKILL_CHART
 
 
 class Skill:

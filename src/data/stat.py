@@ -1,4 +1,4 @@
-from .constants import DEFAULT_STATS
+from ..constants.constants import DEFAULT_STATS
 
 
 class Stat:
