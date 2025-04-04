@@ -2,15 +2,15 @@ from ..constants.constants import SKILL_CHART
 
 
 class Skill:
-    def __init__(self, name, mod, prof_bonus, trained=0):
+    def __init__(self, name: str, mod: int, prof_bonus: int, trained: int = 0):
         self.name = name
         self.trained = trained
         self.bonus = self.update_bonus(mod, prof_bonus)
 
-    def update_bonus(self, mod, prof_bonus):
+    def update_bonus(self, mod: int, prof_bonus: int):
         return mod + (prof_bonus * self.trained)
 
-    def update_trained(self, mod, prof_bonus, trained=0):
+    def update_trained(self, mod: int, prof_bonus: int, trained: int = 0):
         self.trained = trained
         self.bonus = self.update_bonus(mod, prof_bonus)
 
