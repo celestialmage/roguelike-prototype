@@ -20,6 +20,15 @@ class Stat:
     def update_save(self, prof_bonus):
         return self.mod + prof_bonus
 
+    def get_score(self):
+        return self.score
+
+    def get_mod(self):
+        return self.mod
+
+    def get_score_mod(self):
+        return (self.score, self.mod)
+
     def __str__(self):
         return str(self.__dict__)
 
@@ -32,6 +41,18 @@ class StatList:
         for i in range(len(stats)):
             setattr(self, DEFAULT_STATS[i].lower(), Stat(
                 DEFAULT_STATS[i], stats[i], prof_bonus))
+
+    def get_summary(self):
+        summary = (
+            self.strength.get_score_mod(),
+            self.dexterity.get_score_mod(),
+            self.constitution.get_score_mod(),
+            self.intelligence.get_score_mod(),
+            self.wisdom.get_score_mod(),
+            self.charisma.get_score_mod()
+        )
+
+        return summary
 
     def __str__(self):
         return str(self.__dict__)

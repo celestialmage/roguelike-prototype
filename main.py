@@ -8,3 +8,5 @@ lil_guy = {
 }
 
 goblin = Creature(lil_guy)
+
+print(goblin.stats.get_summary())
