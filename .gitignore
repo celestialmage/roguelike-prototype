@@ -9,3 +9,6 @@ tests/
 
 # pycache folder
 __pycache__/
+
+# vscode folder
+.vscode/

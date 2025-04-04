@@ -6,19 +6,24 @@ class Stat:
         self.name = name
         self.abbr = name[:3].upper()
         self.score = score
+        self.trained = 0
         self.mod = self.update_mod()
         self.save = self.update_save(prof_bonus)
 
-    def update_score(self, score):
-        self.score = score
+    def update_score(self, score, prof_bonus):
+        self.score += score
         self.mod = self.update_mod()
-        self.save = self.update_save()
+        self.save = self.update_save(prof_bonus)
 
     def update_mod(self):
         return (self.score // 2) - 5
 
+    def update_trained(self, prof_bonus: int, trained: int):
+        self.trained = trained
+        self.save = self.update_save(prof_bonus)
+
     def update_save(self, prof_bonus):
-        return self.mod + prof_bonus
+        return self.mod + (prof_bonus * self.trained)
 
     def get_score(self):
         return self.score
@@ -28,6 +33,9 @@ class Stat:
 
     def get_score_mod(self):
         return (self.score, self.mod)
+
+    def get_save(self):
+        return self.save
 
     def __str__(self):
         return str(self.__dict__)
