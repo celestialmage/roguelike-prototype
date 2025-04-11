@@ -5,6 +5,7 @@ SKILL_CHART = {
     "Athletics": "strength",
     "Deception": "charisma",
     "History": "intelligence",
+    "Initiative": "dexterity",
     "Insight": "wisdom",
     "Intimidation": "charisma",
     "Investigation": "intelligence",
